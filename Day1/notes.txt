@@ -1,0 +1,30 @@
+FTP Basics & Control Connection
+Introduction to FTP Protocol (RFC 959)
+FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and server over a TCP/IP network.
+Defined in RFC 959, it operates primarily on TCP port 21 for control commands.
+FTP is connection-oriented and stateful, maintaining session information during transfers.
+Control vs Data Connection
+Control Connection:
+Established when the client connects to the server on port 21.
+Used to send commands (e.g., USER, PASS, LIST) and receive responses.
+Remains open for the duration of the session.
+Data Connection:
+Used for transferring actual file data or directory listings.
+Created separately, either actively (server connects back to client) or passively (client initiates data connection).
+Closes after transfer completes.
+Common FTP Commands
+Command	Description
+USER	Sends username for login.
+PASS	Sends password for login.
+LIST	Lists directory contents.
+RETR filename	Retrieves (downloads) a file.
+STOR filename	Stores (uploads) a file.
+QUIT	Ends the session.
+Differences Between HTTP and FTP
+Aspect	HTTP	FTP
+Connection Type	Stateless; each request is independent.	Stateful; maintains session with control connection.
+Number of Connections	Single connection for requests/responses.	Two connections: control (commands) and data (transfers).
+Data Transfer	Data sent over same connection as requests.	Data transfer occurs over a separate data connection.
+Session Management	No persistent session; each request independent.	Maintains session state during connection.
+Use Cases	Web pages, APIs, documents.	File transfers, directory listings.
+This overview provides foundational knowledge of FTP protocol operations and how it differs from HTTP.
